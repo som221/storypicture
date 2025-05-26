@@ -1,0 +1,10 @@
+jobs:
+  release-ios:
+    name: Build and release iOS app
+    runs-on: macos-latest
+    steps:
+      - name: access to secrets
+        run: |
+          echo "PROVIDEDAPIKEY=$PROVIDEDAPIKEY" >> .env
+        env:
+          PROVIDEDAPIKEY: ${{secrets.PROVIDEDAPIKEY}}
